@@ -1,0 +1,317 @@
+{
+  "events": [
+    {
+      "name": "Costruire Mappe Interattive e Geofencing con Google Maps API",
+      "date": "Sep 25, 2026",
+      "location": "Agrigento, IT",
+      "reg_type": "free",
+      "topics": [
+        "Conference",
+        "Google Maps Platform",
+        "Tech Talk / Meetup"
+      ]
+    },
+    {
+      "name": "DevFest Tripoli 2026: Build, Secure, Scale",
+      "date": "Oct 10, 2026",
+      "location": "Tripoli, LY",
+      "reg_type": "free",
+      "topics": [
+        "AI - Gemini",
+        "Conference",
+        "DevFest",
+        "Google Cloud",
+        "Networking",
+        "Workshop / hands-on session"
+      ]
+    },
+    {
+      "name": "DevFest 2026",
+      "date": "Nov 21, 2026",
+      "location": "Setif, DZ",
+      "reg_type": "free",
+      "topics": [
+        "DevFest",
+        "Hackathon"
+      ]
+    },
+    {
+      "name": "Kids preneur",
+      "date": "Sep 30, 2026",
+      "location": "M'Sila, DZ",
+      "reg_type": "free",
+      "topics": [
+        "Accessibility",
+        "Career Development",
+        "Community Building",
+        "Workshop / hands-on session"
+      ]
+    },
+    {
+      "name": "DevFest'26: Build and Connect",
+      "date": "Oct 4, 2026",
+      "location": "M'Sila, DZ",
+      "reg_type": "free",
+      "topics": []
+    },
+    {
+      "name": "Build with AI: Innovate Together",
+      "date": "Oct 30, 2026",
+      "location": "M'Sila, DZ",
+      "reg_type": "free",
+      "topics": []
+    },
+    {
+      "name": "Agentic Apps con Google Gemini SDK e TypeScript",
+      "date": "Sep 18, 2026",
+      "location": "Naples, IT",
+      "reg_type": "external",
+      "topics": [
+        "AI - Gemini",
+        "Google Cloud",
+        "Tech Talk / Meetup",
+        "Workshop / hands-on session"
+      ]
+    },
+    {
+      "name": "DevFest Roma 2026",
+      "date": "Oct 10, 2026",
+      "location": "Rome, IT",
+      "reg_type": "free",
+      "topics": [
+        "AI",
+        "AI - Gemini",
+        "AI - Gemini Enterprise Agent Platform",
+        "Conference",
+        "DevFest",
+        "Google Cloud"
+      ]
+    },
+    {
+      "name": "Build with Gemma Hackathon",
+      "date": "Sep 16, 2026",
+      "location": "Potenza, IT",
+      "reg_type": "free",
+      "topics": [
+        "AI",
+        "AI - Gemini",
+        "Build with AI",
+        "Hackathon"
+      ]
+    },
+    {
+      "name": "IDE Battle @ Come To Code – AI & Dev Workflow",
+      "date": "Sep 25, 2026",
+      "location": "Potenza, IT",
+      "reg_type": "external",
+      "topics": [
+        "AI",
+        "Workshop / hands-on session"
+      ]
+    },
+    {
+      "name": "DevFest Campobasso 2026 - Rebuild your Future!",
+      "date": "Sep 19, 2026",
+      "location": "Campobasso, IT",
+      "reg_type": "free",
+      "topics": [
+        "AI",
+        "AI - Gemini",
+        "AI - Gemini Enterprise Agent Platform",
+        "AI - Gemma",
+        "AR/VR",
+        "Accessibility",
+        "Career Development",
+        "Community Building",
+        "Conference",
+        "DevFest",
+        "Flutter",
+        "Google Cloud",
+        "Networking",
+        "Tech Talk / Meetup",
+        "UX / UI Design",
+        "Web"
+      ]
+    },
+    {
+      "name": "DevFest Pescara: Reloaded",
+      "date": "Nov 7, 2026",
+      "location": "Pescara, IT",
+      "reg_type": "external",
+      "topics": [
+        "AI",
+        "AI - Gemini",
+        "AI - Gemini Enterprise Agent Platform",
+        "AI - Gemma",
+        "Accessibility",
+        "Android",
+        "Career Development",
+        "Community Building",
+        "Conference",
+        "DevFest",
+        "Firebase",
+        "Google Cloud",
+        "Networking",
+        "Web"
+      ]
+    },
+    {
+      "name": "DevFest Tiaret 2026",
+      "date": "Nov 14, 2026",
+      "location": "Tiaret, DZ",
+      "reg_type": "free",
+      "topics": []
+    },
+    {
+      "name": "DevFest Marseille 2026 - Dual Edition ⚡ (Workshop, Talk & Networking)",
+      "date": "Nov 12, 2026",
+      "location": "Marseille, FR",
+      "reg_type": "free",
+      "topics": [
+        "AI",
+        "AI - Gemini",
+        "Community Building",
+        "DevFest",
+        "Google Cloud",
+        "Tech Talk / Meetup",
+        "Workshop / hands-on session"
+      ]
+    },
+    {
+      "name": "GDG Marseille x Epitech Summit - IA, Cloud & Cyber 🚀",
+      "date": "Feb 2, 2027",
+      "location": "Marseille, FR",
+      "reg_type": "free",
+      "topics": [
+        "AI",
+        "Community Building",
+        "Google Cloud",
+        "Workshop / hands-on session"
+      ]
+    },
+    {
+      "name": "DevFest Aix 2026 : Une nouvelle édition provençale !",
+      "date": "Dec 5, 2026",
+      "location": "Aix-en-Provence, FR",
+      "reg_type": "paid",
+      "topics": [
+        "AI",
+        "AI - Gemini",
+        "Conference",
+        "DevFest",
+        "Firebase",
+        "Flutter",
+        "Google Cloud",
+        "Google Workspace",
+        "Networking",
+        "Web"
+      ]
+    },
+    {
+      "name": "DevFest Modena 2026",
+      "date": "Oct 3, 2026",
+      "location": "Modena, IT",
+      "reg_type": "free",
+      "topics": [
+        "AI",
+        "Conference",
+        "DevFest",
+        "Google Cloud",
+        "Web"
+      ]
+    },
+    {
+      "name": "DevFest 2026 - Alicante",
+      "date": "Oct 15, 2026",
+      "location": "Alicante, ES",
+      "reg_type": "free",
+      "topics": [
+        "Conference",
+        "DevFest",
+        "Google Cloud"
+      ]
+    },
+    {
+      "name": "DEMO DAY at the Liquid Galaxy Project for Google Summer of Code 2026",
+      "date": "Aug 20, 2026",
+      "location": "Lleida, ES",
+      "reg_type": "free",
+      "topics": [
+        "AI",
+        "Community Building",
+        "Earth Engine",
+        "Flutter",
+        "Google Maps Platform",
+        "Tech Talk / Meetup"
+      ]
+    },
+    {
+      "name": "Comentamos los nuevos #Pixel11 y su gama de productos #GDGSpain Streamings",
+      "date": "Aug 20, 2026",
+      "location": "Lleida, ES",
+      "reg_type": "free",
+      "topics": [
+        "AI",
+        "Community Building"
+      ]
+    },
+    {
+      "name": "Gemini Summer of Code interns at the Liquid Galaxy Project, Project Presentation Day",
+      "date": "Aug 29, 2026",
+      "location": "Lleida, ES",
+      "reg_type": "free",
+      "topics": [
+        "AI",
+        "Community Building",
+        "Earth Engine",
+        "Flutter",
+        "Google Maps Platform",
+        "Tech Talk / Meetup"
+      ]
+    },
+    {
+      "name": "GDG Spain charlas tech y talleres de IA Agéntica con Gemini en el Gran Canaria Experience 2026",
+      "date": "Sep 2, 2026",
+      "location": "Lleida, ES",
+      "reg_type": "free",
+      "topics": [
+        "AI",
+        "AI - Gemini",
+        "Community Building",
+        "Conference",
+        "Flutter",
+        "Google Cloud",
+        "Tech Talk / Meetup",
+        "Workshop / hands-on session"
+      ]
+    },
+    {
+      "name": "Liquid Galaxy Agentic AI skill contest",
+      "date": "Oct 3, 2026",
+      "location": "Lleida, ES",
+      "reg_type": "free",
+      "topics": [
+        "AI",
+        "Community Building",
+        "Earth Engine",
+        "Google Maps Platform",
+        "Tech Talk / Meetup",
+        "Workshop / hands-on session"
+      ]
+    },
+    {
+      "name": "Devfest Milano 2026",
+      "date": "Oct 10, 2026",
+      "location": "Milano, IT",
+      "reg_type": "free",
+      "topics": [
+        "cohosted",
+        "AI - Gemini",
+        "Conference",
+        "DevFest",
+        "Google Cloud",
+        "Workshop / hands-on session"
+      ]
+    }
+  ]
+}
