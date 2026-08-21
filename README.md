@@ -13,5 +13,13 @@ tool use, retrieval, agents. Each folder is standalone and runnable.
 ## Stack
 Python 3.12, OpenAI SDK, pydantic
 
-## Running
-`cp .env.example .env`, add your key, then see each project's README.
+## Setup
+
+```bash
+python -m venv venv
+source venv/bin/activate        # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+cp .env.example .env            # then add your OPENAI_API_KEY
+```
+
+Then see each project's README.
