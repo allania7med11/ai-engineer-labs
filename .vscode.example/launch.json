@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "semantic-search",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/semantic-search/main.py",
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}
