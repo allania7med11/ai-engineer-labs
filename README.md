@@ -9,6 +9,7 @@ tool use, retrieval, agents. Each folder is standalone and runnable.
 | receipt-parser | photo → total + date | vision, cost per image |
 | event-extractor | PDF → validated JSON | strict schema, enums |
 | weather-agent | answers using a live tool | the tool-call loop |
+| semantic-search | ranks sentences by meaning | cosine similarity, rank not threshold |
 
 ## Stack
 Python 3.12, OpenAI SDK, pydantic
