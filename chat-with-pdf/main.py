@@ -28,14 +28,20 @@ def chunk_id(chunk):
 
 ids = [chunk_id(chunk) for chunk in chunks]
 vector_store.add_documents(documents=chunks, ids=ids)
-user_query = "Why is it acceptable for a search to return slightly wrong results if it runs much faster?"
-results = vector_store.similarity_search(
-    user_query,
-    k=3,
-)
+
+
+def get_results(user_query):
+    results = vector_store.similarity_search(
+        user_query,
+        k=3,
+    )
+    return results
+
 def get_chunk_template(chunk):
-    return f"<Chunk>\n{chunk.page_content}\n</Chunk>"
-PROMPT = f"""You are a helpful assistant that answers questions using only the context provided.
+    return f"<Chunk>\n{chunk.page_content}\n</Chunk>" 
+
+def get_prompt(user_query, results):
+    return f"""You are a helpful assistant that answers questions using only the context provided.
 If you don't know the answer, just say that you don't know, don't try to make up an answer.
 <Context>
 {"\n".join([get_chunk_template(chunk) for chunk in results])}
@@ -44,11 +50,18 @@ If you don't know the answer, just say that you don't know, don't try to make up
 {user_query}
 </Question>
 """
-print(PROMPT)
 client = OpenAI()
 
-response = client.responses.create(
-    model="gpt-5.6",
-    input=PROMPT,
-)
-print(f"<Answer>\n{response.output_text}\n</Answer>")
+while True:
+    user_query = input("Enter your question (or 'exit' to quit): ")
+    if user_query.lower() == 'exit':
+        break
+
+    results = get_results(user_query)
+    PROMPT = get_prompt(user_query, results)
+    response = client.responses.create(
+        model="gpt-5.6",
+        input=PROMPT,
+    )
+    print(PROMPT)
+    print(f"<Answer>\n{response.output_text}\n</Answer>")
