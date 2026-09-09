@@ -82,7 +82,6 @@ def get_results(user_query, hyde=False, client=None):
     query = user_query
     if hyde:
         query = get_hyde(user_query, client=client)
-    print(f"Query for vector search:\n{query}\n")
     results = vector_store.similarity_search(
         query,
         k=5,
@@ -104,16 +103,16 @@ If you don't know the answer, just say that you don't know, don't try to make up
 """
 client = OpenAI()
 
-while True:
-    user_query = input("Enter your question (or 'exit' to quit): ")
-    if user_query.lower() == 'exit':
-        break
+if __name__ == "__main__":
+    while True:
+        user_query = input("Enter your question (or 'exit' to quit): ")
+        if user_query.lower() == 'exit':
+            break
 
-    results = get_results(user_query, hyde=True, client=client)
-    PROMPT = get_prompt(user_query, results)
-    response = client.responses.create(
-        model="gpt-5.6",
-        input=PROMPT,
-    )
-    print(PROMPT)
-    print(f"<Answer>\n{response.output_text}\n</Answer>")
+        results = get_results(user_query, hyde=True, client=client)
+        PROMPT = get_prompt(user_query, results)
+        response = client.responses.create(
+            model="gpt-5.6",
+            input=PROMPT,
+        )
+        print(f"<Answer>\n{response.output_text}\n</Answer>")
