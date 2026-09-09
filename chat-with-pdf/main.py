@@ -25,7 +25,7 @@ def get_loader(pdf_path):
     converter = DocumentConverter(
         format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=opts)}
     )
-    chunker = HybridChunker(tokenizer="sentence-transformers/all-MiniLM-L6-v2", max_tokens=512)
+    chunker = HybridChunker(tokenizer="sentence-transformers/all-MiniLM-L6-v2", max_tokens=256)
 
     loader = DoclingLoader(
         file_path=str(pdf_path),
@@ -66,11 +66,26 @@ def get_vector_store():
 vector_store = get_vector_store()
 vector_store.add_documents(documents=chunks, ids=ids)
 
+def get_hyde(user_query, client=None):
+    if client is None:
+        client = OpenAI()
+    hyde_prompt = f"Write a single paragraph, in the style of a technical whitepaper, that answers the question below. No headings, lists, or references.\n{user_query}"
+    hyde_response = client.responses.create(
+        model="gpt-5.6",
+        input=hyde_prompt,
+        max_output_tokens=300,
+    )
+    return hyde_response.output_text
 
-def get_results(user_query):
+
+def get_results(user_query, hyde=False, client=None):
+    query = user_query
+    if hyde:
+        query = get_hyde(user_query, client=client)
+    print(f"Query for vector search:\n{query}\n")
     results = vector_store.similarity_search(
-        user_query,
-        k=3,
+        query,
+        k=5,
     )
     return results
 
@@ -94,7 +109,7 @@ while True:
     if user_query.lower() == 'exit':
         break
 
-    results = get_results(user_query)
+    results = get_results(user_query, hyde=True, client=client)
     PROMPT = get_prompt(user_query, results)
     response = client.responses.create(
         model="gpt-5.6",
