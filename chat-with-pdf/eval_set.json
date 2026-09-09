@@ -1,0 +1,257 @@
+[
+  {
+    "q": "What is ScaNN and how does it differ from HNSW?",
+    "kind": "verbatim",
+    "heading": "ScaNN",
+    "gold": [
+      "Google developed the scalable approximate nearest neighbor (ScaNN)",
+      "At query time ScaNN uses the user-specified distance measure",
+      "A HNSW is a proximity graph with a hierarchical structure"
+    ]
+  },
+  {
+    "q": "How does HNSW perform vector similarity search?",
+    "kind": "verbatim",
+    "heading": "Hierarchical navigable small worlds",
+    "gold": [
+      "A HNSW is a proximity graph with a hierarchical structure"
+    ]
+  },
+  {
+    "q": "How does ScaNN score candidates at query time?",
+    "kind": "verbatim",
+    "heading": "ScaNN",
+    "gold": [
+      "At query time ScaNN uses the user-specified distance measure"
+    ]
+  },
+  {
+    "q": "What is locality sensitive hashing?",
+    "kind": "verbatim",
+    "heading": "Locality sensitive hashing & trees",
+    "gold": [
+      "hash functions that map similar items to the same hash bucket"
+    ]
+  },
+  {
+    "q": "What is the difference between CBOW and skip-gram in Word2Vec?",
+    "kind": "verbatim",
+    "heading": "Word embeddings",
+    "gold": [
+      "The skip-gram approach: The setup is inverse of that of CBOW"
+    ]
+  },
+  {
+    "q": "What is retrieval augmented generation and why use it?",
+    "kind": "verbatim",
+    "heading": "Q & A with sources (retrieval augmented generation)",
+    "gold": [
+      "It first retrieves relevant documents from a knowledge base and then uses prompt expansion",
+      "RAGs can help with a common problem with LLMs: their tendency to 'hallucinate'"
+    ]
+  },
+  {
+    "q": "What are the weaknesses of bag-of-words models?",
+    "kind": "verbatim",
+    "heading": "Shallow BoW models",
+    "gold": [
+      "both the word ordering and the semantic meanings are ignored"
+    ]
+  },
+  {
+    "q": "How are embedding models trained?",
+    "kind": "verbatim",
+    "heading": "Training Embeddings",
+    "gold": [
+      "dual encoder (two tower) architecture",
+      "two stages: pretraining (unsupervised learning) and fine tuning (supervised learning)"
+    ]
+  },
+  {
+    "q": "What similarity metrics can I use to compare vectors and when should I use each?",
+    "kind": "verbatim",
+    "heading": "Vector search",
+    "gold": [
+      "similarity between vectors can be computed using a metric such as euclidean distance, cosine similarity, or dot product",
+      "Cosine similarity is a measure of the angle between two vectors"
+    ]
+  },
+  {
+    "q": "What does GloVe capture that Word2Vec misses?",
+    "kind": "verbatim",
+    "heading": "Word embeddings",
+    "gold": [
+      "it does not capture the global statistics (words in the whole corpus)",
+      "GloVe is a word embedding technique that leverages both global and local statistics of words"
+    ]
+  },
+  {
+    "q": "What are the key takeaways of the whitepaper?",
+    "kind": "verbatim",
+    "heading": "Summary",
+    "gold": [
+      "Choose your embedding model wisely for your data and use case",
+      "make the choice of the appropriate vector database that suits your budget and business needs"
+    ]
+  },
+  {
+    "q": "Which distance measure works best when vectors have many dimensions?",
+    "kind": "paraphrase",
+    "heading": "Vector search",
+    "gold": [
+      "This seems to work better for higher dimensional data"
+    ]
+  },
+  {
+    "q": "Do I need to re-embed my documents when I switch to a new embedding model?",
+    "kind": "paraphrase",
+    "heading": "Operational considerations",
+    "gold": [
+      "embeddings, unlike traditional content, can mutate over time"
+    ]
+  },
+  {
+    "q": "How do I stop the LLM from making things up when it answers from my documents?",
+    "kind": "paraphrase",
+    "heading": "Q & A with sources (retrieval augmented generation)",
+    "gold": [
+      "return the sources from the retrieval and do a quick coherence check"
+    ]
+  },
+  {
+    "q": "Which tree-based index should I pick when my vectors have hundreds of dimensions?",
+    "kind": "paraphrase",
+    "heading": "Locality sensitive hashing & trees",
+    "gold": [
+      "In that case, the Ball-tree algorithm is better suited"
+    ]
+  },
+  {
+    "q": "Walk me through how a vector database is filled with data and then queried.",
+    "kind": "paraphrase",
+    "heading": "Figure 15. Populating and querying vector databases",
+    "gold": [
+      "An appropriate trained embedding model is used to embed the relevant data points as vectors"
+    ]
+  },
+  {
+    "q": "How do I make nearest neighbour search fast on millions of vectors?",
+    "kind": "paraphrase",
+    "heading": "Important vector search algorithms",
+    "gold": [
+      "This approach is unacceptably slow for most use cases involving several millions of documents",
+      [
+        "hash functions that map similar items to the same hash bucket",
+        "A HNSW is a proximity graph with a hierarchical structure",
+        "Google developed the scalable approximate nearest neighbor (ScaNN)"
+      ]
+    ]
+  },
+  {
+    "q": "Why does search return nothing when I type a word wrong?",
+    "kind": "paraphrase",
+    "heading": "Vector search",
+    "gold": [
+      "a traditional keyword search returns incorrect or no results"
+    ]
+  },
+  {
+    "q": "I have rows of machine measurements and want to find the odd ones out. How?",
+    "kind": "paraphrase",
+    "heading": "General structured data",
+    "gold": [
+      "we can create embeddings for anomaly detection using large data sets of labeled sensor information"
+    ]
+  },
+  {
+    "q": "How do I embed people so that friends land close to each other?",
+    "kind": "paraphrase",
+    "heading": "Graph embeddings",
+    "gold": [
+      "if two nodes are connected by an edge, the vectors for those nodes would be similar"
+    ]
+  },
+  {
+    "q": "How does a model work out what a word means from the text around it?",
+    "kind": "paraphrase",
+    "heading": "Word embeddings",
+    "gold": [
+      "the semantic meaning of a word is defined by its neighbors"
+    ]
+  },
+  {
+    "q": "Why does my search ignore the exact part number I typed?",
+    "kind": "paraphrase",
+    "heading": "Operational considerations",
+    "gold": [
+      "match the meaning of the text closely, but not the ID"
+    ]
+  },
+  {
+    "q": "How do I get an embedding for an image?",
+    "kind": "paraphrase",
+    "heading": "Image & multimodal embeddings",
+    "gold": [
+      "using the penultimate layer as the image embedding"
+    ]
+  },
+  {
+    "q": "What is the recommended number of partitions in ScaNN?",
+    "kind": "factoid",
+    "heading": "ScaNN",
+    "gold": [
+      "square root of the number of vectors"
+    ]
+  },
+  {
+    "q": "How many NLP tasks did BERT achieve groundbreaking results on?",
+    "kind": "factoid",
+    "heading": "Deeper pretrained large language models",
+    "gold": [
+      "groundbreaking results on 11 NLP tasks"
+    ]
+  },
+  {
+    "q": "How many parameters does PaLM have?",
+    "kind": "factoid",
+    "heading": "Deeper pretrained large language models",
+    "gold": [
+      "540B parameters"
+    ]
+  },
+  {
+    "q": "Which token's embedding does BERT use to represent the whole input?",
+    "kind": "factoid",
+    "heading": "Deeper pretrained large language models",
+    "gold": [
+      "a special token named [CLS]"
+    ]
+  },
+  {
+    "q": "Which vector databases use HNSW?",
+    "kind": "factoid",
+    "heading": "Figure 15. Populating and querying vector databases",
+    "gold": [
+      "Pinecone and Weaviate leverage HNSW"
+    ]
+  },
+  {
+    "q": "What is the runtime complexity of a linear search over all documents?",
+    "kind": "factoid",
+    "heading": "Important vector search algorithms",
+    "gold": [
+      "scales linearly (O(N))"
+    ]
+  },
+  {
+    "q": "Which Google Cloud service makes ScaNN available to customers?",
+    "kind": "factoid",
+    "heading": "ScaNN",
+    "gold": [
+      [
+        "available to all customers of Google Cloud through the Vertex AI Vector Search",
+        "Vertex AI Vector Search is a vector database built by Google that uses the ScaNN algorithm"
+      ]
+    ]
+  }
+]

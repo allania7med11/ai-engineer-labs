@@ -2,3 +2,4 @@
 .vscode/
 chroma_langchain_db
 __pycache__
+chat-with-pdf/inspect/
