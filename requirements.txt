@@ -7,3 +7,5 @@ pypdf
 tiktoken
 langchain-chroma>=0.1.2
 langchain_openai
+pyprojroot
+langchain-docling

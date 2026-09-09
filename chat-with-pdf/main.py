@@ -1,25 +1,51 @@
-from langchain_community.document_loaders import PyPDFLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = ""   # must run before any torch/docling import
+from docling.document_converter import DocumentConverter
+from docling.chunking import HybridChunker
+from langchain_docling import DoclingLoader
 from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
 import hashlib
 
 from openai import OpenAI
+from pyprojroot import here
+from docling.datamodel.pipeline_options import PdfPipelineOptions
+from docling.datamodel.accelerator_options import AcceleratorOptions, AcceleratorDevice
+from docling.datamodel.base_models import InputFormat
+from docling.document_converter import DocumentConverter, PdfFormatOption
 
-embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
+pdf_path = here("chat-with-pdf/files/embeddings & vector stores.pdf")
 
-vector_store = Chroma(
-    collection_name="example_collection",
-    embedding_function=embeddings,
-    persist_directory="./chroma_langchain_db",
-)
+def get_loader(pdf_path):
+    opts = PdfPipelineOptions()
+    opts.do_ocr = False
+    opts.accelerator_options = AcceleratorOptions(device=AcceleratorDevice.CPU, num_threads=os.cpu_count())
 
-loader = PyPDFLoader("./chat-with-pdf/files/embeddings & vector stores.pdf")
-documents = loader.load()
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
-chunks = text_splitter.split_documents(documents)
+    converter = DocumentConverter(
+        format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=opts)}
+    )
+    chunker = HybridChunker(tokenizer="sentence-transformers/all-MiniLM-L6-v2", max_tokens=512)
 
+    loader = DoclingLoader(
+        file_path=str(pdf_path),
+        converter=converter,
+        chunker=chunker,
+    )
+    return loader
+    
+loader = get_loader(pdf_path)
+chunks = loader.load()   # list of LangChain Documents
+
+
+def flatten_metadata(chunk):
+    dl_meta = chunk.metadata.pop("dl_meta")
+    chunk.metadata["page"] = dl_meta["doc_items"][0]["prov"][0]["page_no"]
+    chunk.metadata["headings"] = " > ".join(dl_meta.get("headings", []))
+    return chunk
+
+
+chunks = [flatten_metadata(chunk) for chunk in chunks]
 
 def chunk_id(chunk):
     key = f"{chunk.metadata['source']}|{chunk.metadata['page']}|{chunk.page_content}"
@@ -27,6 +53,17 @@ def chunk_id(chunk):
 
 
 ids = [chunk_id(chunk) for chunk in chunks]
+
+def get_vector_store():
+    embeddings = OpenAIEmbeddings()
+    vector_store = Chroma(
+        collection_name="pdf_chunks",
+        embedding_function=embeddings,
+        persist_directory="chroma_langchain_db",
+    )
+    return vector_store
+
+vector_store = get_vector_store()
 vector_store.add_documents(documents=chunks, ids=ids)
 
 
